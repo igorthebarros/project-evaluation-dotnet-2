@@ -1,5 +1,8 @@
-﻿using IoC.Interfaces;
+﻿using Application.Services;
+using Domain.Contracts.Services;
+using IoC.Interfaces;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace IoC.ModuleInitializers
 {
@@ -7,7 +10,7 @@ namespace IoC.ModuleInitializers
     {
         public void Initialize(WebApplicationBuilder builder)
         {
-
+            builder.Services.AddTransient<IOrderService, OrderService>();
         }
     }
 }

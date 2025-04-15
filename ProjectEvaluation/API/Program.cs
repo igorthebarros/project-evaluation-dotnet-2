@@ -1,3 +1,4 @@
+using Application;
 using IoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.RegisterDependencies();
 
 builder.Services.AddOpenApi();
+
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblies(
+        typeof(ApplicationLayer).Assembly,
+        typeof(Program).Assembly
+    );
+});
 
 var app = builder.Build();
 

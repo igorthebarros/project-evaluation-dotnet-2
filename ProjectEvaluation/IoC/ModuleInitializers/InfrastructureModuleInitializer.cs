@@ -1,4 +1,6 @@
-﻿using Infrastructure;
+﻿using Domain.Contracts.Repositories;
+using Infrastructure;
+using Infrastructure.Repositories;
 using IoC.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +19,8 @@ namespace IoC.ModuleInitializers
                 x.UseNpgsql(
                     builder.Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly("Infrastructure")));
+
+            builder.Services.AddTransient<IOrderRepository, OrderRepository>();
         }
     }
 }
