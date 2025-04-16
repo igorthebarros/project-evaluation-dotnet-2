@@ -15,6 +15,9 @@ namespace API.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Create a new Order
+        /// </summary>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateOrderCommand command)
         {

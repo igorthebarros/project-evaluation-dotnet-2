@@ -2,7 +2,8 @@
 
 namespace Domain.Contracts.Repositories
 {
-    public interface IOrderRepository : IBaseRespository<Order>
-    {
-    }
+    /// <summary>
+    /// Repository interface for Order entity operations
+    /// </summary>
+    public interface IOrderRepository : IBaseRespository<Order> { }
 }
