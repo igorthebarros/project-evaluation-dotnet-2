@@ -11,6 +11,7 @@ namespace IoC.ModuleInitializers
         public void Initialize(WebApplicationBuilder builder)
         {
             builder.Services.AddTransient<IOrderService, OrderService>();
+            builder.Services.AddTransient<ICompanyService, CompanyService>();
         }
     }
 }

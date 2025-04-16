@@ -21,6 +21,7 @@ namespace IoC.ModuleInitializers
                     b => b.MigrationsAssembly("Infrastructure")));
 
             builder.Services.AddTransient<IOrderRepository, OrderRepository>();
+            builder.Services.AddTransient<ICompanyRepository, CompanyRepository>();
         }
     }
 }
