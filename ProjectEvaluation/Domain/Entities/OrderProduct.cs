@@ -3,7 +3,7 @@
     public class OrderProduct : BaseEntity
     {
         public Guid OrderId { get; set; }
-        public Product Product { get; set; } = new Product();
+        public Guid ProductId { get; set; }
         public uint Quantity { get; set; }
         public decimal TotalAmount { get; set; }
     }

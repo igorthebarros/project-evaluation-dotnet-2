@@ -18,21 +18,19 @@ namespace Infrastructure.Mapping
 
             builder.Property(x => x.UpdatedAt);
 
-            builder.HasOne(x => x.Company)
-                .WithMany()
-                .HasForeignKey(x => x.Id)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(x => x.CompanyId)
+                .IsRequired();
 
-            builder.HasOne(x => x.Address)
-                .WithMany()
-                .HasForeignKey(x => x.Id)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(x => x.AddressId)
+                .IsRequired();
+
+            builder.Property(x => x.UserId)
+                .IsRequired();
 
             builder.HasMany(x => x.OrderProducts)
                 .WithOne()
                 .HasForeignKey(x => x.Id)
                 .OnDelete(DeleteBehavior.Restrict);
-
         }
     }
 }

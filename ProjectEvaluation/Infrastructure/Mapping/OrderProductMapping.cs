@@ -25,9 +25,8 @@ namespace Infrastructure.Mapping
                    .IsRequired()
                    .HasColumnType("decimal(18,2)");
 
-            builder.HasOne(x => x.Product)
-                   .WithMany()
-                   .OnDelete(DeleteBehavior.Restrict);
+            builder.Property(x => x.ProductId)
+                   .IsRequired();
         }
     }
 }

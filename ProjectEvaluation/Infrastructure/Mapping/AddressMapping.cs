@@ -13,6 +13,11 @@ namespace Infrastructure.Mapping
             builder.HasKey(x => x.Id)
                 .HasName("PK_ADDRESS");
 
+            builder.HasOne<Company>()
+                .WithMany()
+                .HasForeignKey(x => x.CompanyId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             builder.HasIndex(a => a.PostalCode);
 
             builder.Property(x => x.Id)

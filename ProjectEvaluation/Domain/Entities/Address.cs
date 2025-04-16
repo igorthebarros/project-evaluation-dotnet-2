@@ -7,5 +7,7 @@
         public string City { get; set; } = string.Empty;
         public string Neighborhood {  get; set; } = string.Empty;
         public string PostalCode { get; set; } = string.Empty;
+        public Guid CompanyId { get; set; }
+        public Company? Company { get; set; } = null;
     }
 }
