@@ -2,5 +2,5 @@
 
 namespace Domain.Contracts.Services
 {
-    public interface IOrderService : IBaseService<Order> { }
+    public interface ICompanyService : IBaseService<Company> { }
 }
